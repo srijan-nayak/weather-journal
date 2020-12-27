@@ -8,7 +8,23 @@
 </head>
 
 <body>
-  <h1>Weather Journal</h1>
+  <header class="header">
+    <h1 class="header__text">Weather Journal</h1>
+  </header>
+
+  <section class="form">
+    <div class="form__input-group">
+      <label for="zip">ZIP code</label>
+      <input type="text" id="zip" placeholder="Enter ZIP code here">
+    </div>
+
+    <div class="form__input-group">
+      <label for="feelings">How are you feeling today?</label>
+      <textarea id="feelings" placeholder="Write your thoughts here"></textarea>
+    </div>
+
+    <button class="form__button" id="generate">Add entry</button>
+  </section>
 </body>
 
 </html>
