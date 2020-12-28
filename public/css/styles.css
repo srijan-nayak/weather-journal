@@ -54,3 +54,26 @@ body {
   font-family: "Poppins", sans-serif;
   resize: vertical;
 }
+
+.form__button {
+  background-color: #000;
+  border: none;
+  box-shadow: 1px 7px 11px -6px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 2.4rem;
+  letter-spacing: 0.1em;
+  line-height: 1em;
+  padding: 1.6rem 3.2rem;
+  text-transform: uppercase;
+  transform: translateY(-0.2rem);
+  transition: box-shadow 100ms ease-in, transform 100ms ease-in;
+}
+
+.form__button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.form__button:focus {
+  outline: none;
+}
