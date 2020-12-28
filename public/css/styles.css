@@ -17,7 +17,8 @@ body {
   margin-bottom: 3.2rem;
 }
 
-.header__container {
+.header__container,
+.main-container {
   max-width: 90%;
   margin: 0 auto;
 }
@@ -27,4 +28,29 @@ body {
   font-weight: normal;
   letter-spacing: 0.05em;
   line-height: 1.2em;
+}
+
+.form__input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
+
+.form__input-group label {
+  font-size: 3.2rem;
+  line-height: 1.1em;
+  margin-bottom: 1.6rem;
+}
+
+.form__input-group input,
+.form__input-group textarea {
+  background-color: #ececec;
+  border: none;
+  font-size: 2.4rem;
+  padding: 1.6rem;
+}
+
+.form__input-group textarea {
+  font-family: "Poppins", sans-serif;
+  resize: vertical;
 }
