@@ -11,3 +11,20 @@ html {
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.header {
+  padding: 2.4rem 0;
+  margin-bottom: 3.2rem;
+}
+
+.header__container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.header__text {
+  font-size: 4.8rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  line-height: 1.2em;
+}
