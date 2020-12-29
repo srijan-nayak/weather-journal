@@ -30,6 +30,10 @@ body {
   line-height: 1.2em;
 }
 
+.form {
+  margin-bottom: 3.2rem;
+}
+
 .form__input-group {
   display: flex;
   flex-direction: column;
