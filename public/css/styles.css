@@ -128,3 +128,40 @@ body {
   padding-right: 1.6rem;
   border-right: 1px solid #000;
 }
+
+.entries__table {
+  background-color: #ececec;
+  padding: 1.6rem;
+  padding-top: 0;
+  width: 100%;
+  table-layout: fixed;
+  display: block;
+  max-height: 16rem;
+  overflow-y: scroll;
+}
+
+.entries__table th,
+.entries__table td {
+  font-size: 1.6rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.entries__table thead th:nth-child(1) {
+  width: 30%;
+}
+
+.entries__table thead th:nth-child(2) {
+  width: 20%;
+}
+
+.entries__table thead th:nth-child(3) {
+  width: 50%;
+}
+
+.entries__table thead tr th {
+  background-color: #ececec;
+  position: sticky;
+  top: 0;
+  padding: 1.6rem 0;
+}
