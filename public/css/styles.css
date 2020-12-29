@@ -10,6 +10,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
 }
 
 .header {
@@ -137,7 +138,7 @@ body {
   table-layout: fixed;
   display: block;
   max-height: 16rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .entries__table th,
@@ -164,4 +165,58 @@ body {
   position: sticky;
   top: 0;
   padding: 1.6rem 0;
+}
+
+@media (min-width: 576px) {
+  .header__container,
+  .main-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__container,
+  .main-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header__container,
+  .main-container {
+    max-width: 960px;
+  }
+
+  .header__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .form {
+    margin-bottom: 0;
+  }
+
+  .entries__table {
+    max-height: 32rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__container,
+  .main-container {
+    max-width: 114rem;
+  }
 }
