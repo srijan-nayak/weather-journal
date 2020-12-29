@@ -61,6 +61,11 @@ body {
   padding: 1.6rem;
 }
 
+.form__input-group input:focus,
+.form__input-group textarea:focus {
+  outline: 2px solid #000;
+}
+
 .form__input-group textarea {
   font-family: "Poppins", sans-serif;
   resize: vertical;
