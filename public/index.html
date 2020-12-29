@@ -33,16 +33,29 @@
     </section>
 
     <section class="entries">
-      <h2 class="entries__heading">Recent entries</h2>
-      <table class="entries__table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temperature</th>
-            <th>Content</th>
-          </tr>
-        </thead>
-      </table>
+      <div class="entries__group">
+        <h2>Most recent entry</h2>
+        <div id="entryHolder">
+          <div id="date"><span>29 Dec, 2020</span></div>
+          <div id="temp"><span>19℃</span></div>
+          <div id="content">
+            <p>Today feels like a good day</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="entries__group">
+        <h2>Recent entries</h2>
+        <table class="entries__table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Temperature</th>
+              <th>Content</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </section>
   </main>
 </body>
