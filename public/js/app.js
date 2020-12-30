@@ -23,12 +23,30 @@ const fetchCurrentTemp = async () => {
   }
 };
 
+const getFeelings = () => {
+  const feelingsInput = document.querySelector("#feelings");
+  const feelings = feelingsInput.value;
+
+  if (!feelings) {
+    // add red outline to indicate empty textarea
+    feelingsInput.classList.add("incorrect-input");
+  } else {
+    // remove red outline if content is present
+    feelingsInput.classList.remove("incorrect-input");
+    return feelings;
+  }
+};
+
 const updateEntries = async () => {
   const currentTemp = await fetchCurrentTemp();
+  const feelings = getFeelings();
+
   if (!currentTemp) {
     alert(
       "Couldn't fetch weather data for the given country code and ZIP code combination!"
     );
+  } else if (!feelings) {
+    alert("No thoughts found to enter in journal!");
   } else {
     console.log(currentTemp);
   }
