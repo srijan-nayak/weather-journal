@@ -71,6 +71,10 @@ body {
   resize: vertical;
 }
 
+.incorrect-input {
+  outline: 2px solid #ff3030;
+}
+
 .form__button {
   background-color: #000;
   border: none;
