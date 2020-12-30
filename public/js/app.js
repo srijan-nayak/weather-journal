@@ -37,9 +37,21 @@ const getFeelings = () => {
   }
 };
 
+const addEntry = async (temp, feelings, date) => {
+  const response = await fetch("/entries/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ temp, feelings, date }),
+  });
+  return response;
+};
+
 const updateEntries = async () => {
   const currentTemp = await fetchCurrentTemp();
   const feelings = getFeelings();
+  const today = new Date(Date.now());
 
   if (!currentTemp) {
     alert(
@@ -48,7 +60,7 @@ const updateEntries = async () => {
   } else if (!feelings) {
     alert("No thoughts found to enter in journal!");
   } else {
-    console.log(currentTemp);
+    await addEntry(currentTemp, feelings, today);
   }
 };
 
