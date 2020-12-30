@@ -48,6 +48,37 @@ const addEntry = async (temp, feelings, date) => {
   return response;
 };
 
+const getEntries = async () => {
+  const response = await fetch("/entries");
+  return response.json();
+};
+
+const updateUI = (entries) => {
+  const noDataPlaceholder = document.querySelector(".no-data");
+  const entriesSection = document.querySelector(".entries");
+  // hide the no-data placeholder
+  noDataPlaceholder.classList.add("no-data--hidden");
+  // make the entries section visible
+  entriesSection.classList.remove("entries--hidden");
+
+  const mostRecentEntry = entries[0];
+
+  const getFormattedDate = (date) => {
+    // extract 'Month DD YYYY' from the date string representation
+    const [month, day, year] = date.toString().split(" ").slice(1, 4);
+    return `${day} ${month}, ${year}`;
+  };
+  const getFormattedTemp = (temp) => `${Math.round(temp)}℃`;
+
+  const formattedDate = getFormattedDate(new Date(mostRecentEntry.date));
+  const formattedTemp = getFormattedTemp(mostRecentEntry.temp);
+
+  // update the divs in #entryHolder which displays the most recent entry
+  document.querySelector("#date").innerText = formattedDate;
+  document.querySelector("#temp").innerText = formattedTemp;
+  document.querySelector("#content").innerText = mostRecentEntry.feelings;
+};
+
 const updateEntries = async () => {
   const currentTemp = await fetchCurrentTemp();
   const feelings = getFeelings();
@@ -61,6 +92,8 @@ const updateEntries = async () => {
     alert("No thoughts found to enter in journal!");
   } else {
     await addEntry(currentTemp, feelings, today);
+    const entries = await getEntries();
+    updateUI(entries);
   }
 };
 
