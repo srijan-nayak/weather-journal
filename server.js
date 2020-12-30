@@ -22,6 +22,15 @@ entriesRouter.get("/", (req, res) => {
   console.log(projectData);
 });
 
+// POST route for entries; adds new entry data to the global project data
+entriesRouter.post("/post", (req, res) => {
+  const newEntry = req.body;
+  projectData.unshift(newEntry); // add new entry at the beginning
+  console.log("New entry added through POST route:");
+  console.log(newEntry);
+  res.send("New entry added");
+});
+
 const port = 8080;
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}/`);
