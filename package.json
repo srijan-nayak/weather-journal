@@ -4,7 +4,7 @@
   "description": "A journal the records the weather while adding entries.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
