@@ -26,6 +26,7 @@ const fetchCurrentTemp = async () => {
 const getFeelings = () => {
   const feelingsInput = document.querySelector("#feelings");
   const feelings = feelingsInput.value;
+  feelingsInput.value = "";
 
   if (!feelings) {
     // add red outline to indicate empty textarea
