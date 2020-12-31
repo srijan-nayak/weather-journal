@@ -55,6 +55,11 @@ const getEntries = async () => {
 };
 
 const updateUI = (entries) => {
+  // don't update UI if no entries are present
+  if (entries.length === 0) {
+    return;
+  }
+
   const noDataPlaceholder = document.querySelector(".no-data");
   const entriesSection = document.querySelector(".entries");
   // hide the no-data placeholder
@@ -121,6 +126,9 @@ const updateEntries = async () => {
     updateUI(entries);
   }
 };
+
+// try to update the UI once at the beginning
+getEntries().then((entries) => updateUI(entries));
 
 const addEntryButton = document.querySelector("#generate");
 addEntryButton.addEventListener("click", updateEntries);
