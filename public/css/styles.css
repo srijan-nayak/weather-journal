@@ -71,6 +71,10 @@ body {
   resize: vertical;
 }
 
+.incorrect-input {
+  outline: 2px solid #ff3030;
+}
+
 .form__button {
   background-color: #000;
   border: none;
@@ -92,6 +96,20 @@ body {
 
 .form__button:focus {
   outline: none;
+}
+
+.no-data p {
+  background-color: #ececec;
+  font-size: 2.4rem;
+  padding: 1.6rem;
+}
+
+.no-data--hidden {
+  display: none;
+}
+
+.entries--hidden {
+  display: none;
 }
 
 #entryHolder {
