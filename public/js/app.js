@@ -77,6 +77,30 @@ const updateUI = (entries) => {
   document.querySelector("#date").innerText = formattedDate;
   document.querySelector("#temp").innerText = formattedTemp;
   document.querySelector("#content").innerText = mostRecentEntry.feelings;
+
+  const entryRows = document.createDocumentFragment();
+  // create a row for each entry and then append it to the document fragment
+  entries.forEach((entry) => {
+    const row = document.createElement("tr");
+
+    const dateData = document.createElement("td");
+    const tempData = document.createElement("td");
+    const contentData = document.createElement("td");
+
+    dateData.innerText = getFormattedDate(new Date(entry.date));
+    tempData.innerText = getFormattedTemp(entry.temp);
+    contentData.innerText = entry.feelings;
+
+    row.appendChild(dateData);
+    row.appendChild(tempData);
+    row.appendChild(contentData);
+
+    entryRows.appendChild(row);
+  });
+  // clear the content in the table body, then append the document fragment containing the rows
+  const entriesTableBody = document.querySelector(".entries__table tbody");
+  entriesTableBody.innerHTML = "";
+  entriesTableBody.appendChild(entryRows);
 };
 
 const updateEntries = async () => {
